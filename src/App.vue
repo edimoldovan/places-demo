@@ -1,22 +1,55 @@
 <template>
-  <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
+  <div class="container">
+    <header>
+      <nav>
+        <a v-link="{ path: '/', exact: true }">Home</a>
+        <a v-link="{ path: '/restaurants' }">Restaurants</a>
+        <a v-link="{ path: '/contact' }">Contact</a>
+      </nav>
+    </header>
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import Hello from './components/Hello'
+<style lang="sass?outputStyle=expanded">
 
-export default {
-  components: {
-    Hello
+  $white: #ffffff;
+  $blue: #1C86EE;
+
+  body {
+    font: caption;
   }
-}
-</script>
 
-<style>
-body {
-  font-family: Helvetica, sans-serif;
-}
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  header {
+    width: 100%;
+    float: left;
+
+    nav {
+      float: left;
+
+      a {
+        color: $blue;
+        padding: 1rem;
+        float: left;
+        font-size: 1.5rem;
+
+        &.active {
+          color: $white;
+          background-color: $blue;
+        }
+      }
+    }
+  }
+
+
+
 </style>

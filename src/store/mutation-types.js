@@ -1,0 +1,2 @@
+export const CREATE_PLACE = 'CREATE_PLACE'
+export const RECEIVE_PLACES = 'RECEIVE_PLACES'
