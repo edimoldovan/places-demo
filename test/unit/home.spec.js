@@ -1,7 +1,7 @@
 /* global describe, it, expect */
 
 import Vue from 'vue'
-import Hello from 'src/components/Hello'
+import Hello from 'src/components/home'
 
 describe('Hello.vue', () => {
   it('should render correct contents', () => {
@@ -9,7 +9,7 @@ describe('Hello.vue', () => {
       template: '<div><hello></hello></div>',
       components: { Hello }
     }).$mount()
-    expect(vm.$el.querySelector('.hello h1').textContent).toBe('Hello World!')
+    expect(vm.$el.querySelector('h1').textContent).toBe('Home')
   })
 })
 
