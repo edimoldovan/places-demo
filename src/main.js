@@ -27,7 +27,9 @@ router.map({
         }
       },
       '/:id': {
-        component: RestaurantDetailView,
+        component: (resolve) => {
+          resolve(RestaurantDetailView)
+        },
         name: 'restaurant-detail'
       }
     }

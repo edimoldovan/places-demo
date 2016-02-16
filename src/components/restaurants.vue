@@ -13,17 +13,11 @@
 <script>
 
 import store from '../store'
-const { getAllPlaces, createPlace } = store.actions
+const { getAllPlaces } = store.actions
 
 export default {
 
   name: 'RestaurantsView',
-
-  /* data () {
-    return {
-      places: store.state.places
-    }
-  }, */
 
   computed: {
     places () {
@@ -31,36 +25,23 @@ export default {
     }
   },
 
-  created () {
+  /* created () {
+    console.log('store retrieved')
     getAllPlaces()
-  },
+  },*/
 
   methods: {
-    createPlace () {
-      createPlace()
+    update () {
+      this.places = store.state.places
     }
-  }/* ,
+  },
 
   route: {
+    // Get the `to` route using ES2015 argument destructuring;
     data ({ to }) {
-      // This is the route data hook. It gets called every time the route
-      // changes while this component is active.
-      //
-      // What we are doing:
-      //
-      // 1. Get the `to` route using ES2015 argument destructuring;
-      // 2. Get the `page` param and cast it to a Number;
-      // 3. Fetch the items from the store, which returns a Promise containing
-      //    the fetched items;
-      // 4. Chain the Promise and return the final data for the component.
-      //    Note we are waiting until the items are resolved before resolving
-      //    the entire object, because we don't want to update the page before
-      //    the items are fetched.
-      return {
-        places: []
-      }
+      getAllPlaces()
     }
-  } */
+  }
 }
 </script>
 

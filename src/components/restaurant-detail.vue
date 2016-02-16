@@ -17,9 +17,20 @@ export default {
     }
   },
 
+  created () {
+    this.update()
+  },
+
+  methods: {
+    update () {
+      this.place = store.state.places.filter(place => parseInt(place.id, 10) === parseInt(this.$route.params.id, 10))[0]
+    }
+  },
+
   route: {
     // Get the `to` route using ES2015 argument destructuring;
     data ({ to }) {
+      console.log('oi')
       return {
         place: store.state.places.filter(place => parseInt(place.id, 10) === parseInt(to.params.id, 10))[0]
       }
