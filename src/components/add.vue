@@ -2,7 +2,8 @@
   <div class="detail">
     <form class="">
       <input type="text" v-model="name" name="name" value="" placeholder="name">
-      <input type="text" v-model="open" name="open" value="" placeholder="open">
+      <input type="checkbox" id="checkbox" v-model="open">
+      <label for="checkbox">Open</label>
       <input type="button" name="save" value="Save">
     </form>
   </div>
@@ -20,7 +21,7 @@ export default {
   data () {
     return {
       name: '',
-      open: ''
+      open: true
     }
   },
 
@@ -39,7 +40,7 @@ export default {
     data ({ to }) {
       return {
         name: '',
-        open: ''
+        open: true
       }
     }
   }
@@ -61,6 +62,15 @@ export default {
     color: $blue;
     width: 33rem;
     min-height: 30rem;
+
+    label {
+      font-size: 1.5rem;
+    }
+
+    input[type=checkbox] {
+      height: 1rem;
+      width: 1rem;
+    }
 
     input[type=text] {
       font-size: 1.5rem;

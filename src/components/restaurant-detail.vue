@@ -1,12 +1,8 @@
 <template>
   <div class="detail">
     <h1>{{ place.name }}</h1>
-    <div v-if="place.open">
-      <h2>It's open</h2>
-    </div>
-    <div v-else>
-      <h2>Sorry, closed</h2>
-    </div>
+    <input type="checkbox" id="checkbox" v-model="place.open">
+    <label for="checkbox">Open</label>
   </div>
 </template>
 
@@ -60,6 +56,15 @@ export default {
     color: $blue;
     width: 33rem;
     min-height: 30rem;
+
+    label {
+      font-size: 1.5rem;
+    }
+
+    input[type=checkbox] {
+      height: 1rem;
+      width: 1rem;
+    }
   }
 
 </style>
