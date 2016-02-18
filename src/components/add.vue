@@ -4,12 +4,15 @@
       <input type="text" v-model="name" name="name" value="" placeholder="name">
       <input type="checkbox" id="checkbox" v-model="open">
       <label for="checkbox">Open</label>
-      <input type="button" name="save" value="Save">
+      <input type="button" name="save" value="Save" v-on:click="save(name, open)">
     </form>
   </div>
 </template>
 
 <script>
+
+import store from '../store'
+const { createPlace } = store.actions
 
 export default {
 
@@ -25,16 +28,11 @@ export default {
     }
   },
 
-  /* created () {
-    //store.on('retrieve-users', store.users.findAll)
-    store.on('users-retrieved', this.update)
-  },
-
   methods: {
-    update () {
-      this.users = store.users.data
+    save: (name, open) => {
+      createPlace(name, open)
     }
-  },*/
+  },
 
   route: {
     data ({ to }) {

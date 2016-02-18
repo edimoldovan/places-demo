@@ -13,6 +13,7 @@ export const placesMutations = {
   },
 
   [CREATE_PLACE] (state, place) {
-    state.place = place
+    place.id = state.places.length + 1
+    state.places.push(place)
   }
 }

@@ -23,8 +23,12 @@ export default {
 
   createPlace (place, cb, errorCb) {
     setTimeout(() => {
-      // simulate random checkout failure.
-      Math.random() > 0.5 ? cb() : errorCb()
+      _places.push({
+        id: _places.length,
+        name: name,
+        open: open
+      })
+      cb(_places)
     }, 100)
   }
 }
