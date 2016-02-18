@@ -1,7 +1,7 @@
 const _places = [
   {
     'id': 1,
-    'nme': 'Merido',
+    'name': 'Merido',
     'open': true
   },
   {

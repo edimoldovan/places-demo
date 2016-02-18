@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import App from './App'
 import HomeView from './components/home.vue'
 import RestaurantsView from './components/restaurants.vue'
-import ContactView from './components/contact.vue'
+import AddView from './components/add.vue'
 import RestaurantDetailView from './components/restaurant-detail.vue'
 
 // install router
@@ -23,7 +23,7 @@ router.map({
     subRoutes: {
       '/': {
         component: {
-          template: '<p>Choose a restaurant on the left side</p>'
+          template: '<div class="empty">Choose a restaurant on the left side</div>'
         }
       },
       '/:id': {
@@ -31,11 +31,11 @@ router.map({
           resolve(RestaurantDetailView)
         },
         name: 'restaurant-detail'
+      },
+      '/add': {
+        component: AddView
       }
     }
-  },
-  '/contact': {
-    component: ContactView
   }
 })
 

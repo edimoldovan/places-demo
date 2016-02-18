@@ -1,5 +1,5 @@
 <template>
-  <h2>Restaurants</h2>
+  <a class="add" v-link="{ path: '/restaurants/add' }">Add restaurant</a>
   <ul class="list">
     <li v-for="place in places">
       <a v-link="{ name: 'restaurant-detail', params: { id: place.id } }">
@@ -49,14 +49,28 @@ export default {
 
   $white: #ffffff;
   $red: red;
-  $blue: rgb(30, 87, 153);
+  $blue: #1C86EE;
+
+  .add {
+    font-size: 2rem;
+    float: left;
+    background-color: $white;
+    color: $blue;
+    margin: 0;
+    padding: 1rem;
+    width: 13rem;
+
+    &.active {
+      background-color: $blue;
+      color: $white;
+    }
+  }
 
   ul.list {
     float: left;
+    clear: both;
     width: 15rem;
-    height: 44rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    list-style: none;
 
     li {
       float: left;
@@ -70,7 +84,8 @@ export default {
 
         h2 {
           font-weight: normal;
-          font-size: 2rem;
+          font-size: 1.5rem;
+          color: $blue;
         }
 
         h3 {
@@ -80,10 +95,19 @@ export default {
       }
 
       a.active {
-        background-color: $white;
-        color: $blue;
+        background-color: $blue;
+        h2 {
+          color: $white;
+        }
       }
     }
+  }
+
+  .empty {
+    display: inline-block;
+    padding: 10rem 2rem;
+    margin: 0;
+    font-size: 2rem;
   }
 
 </style>

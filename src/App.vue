@@ -4,7 +4,6 @@
       <nav>
         <a v-link="{ path: '/', exact: true }">Home</a>
         <a v-link="{ path: '/restaurants' }">Restaurants</a>
-        <a v-link="{ path: '/contact' }">Contact</a>
       </nav>
     </header>
     <router-view></router-view>
@@ -43,13 +42,15 @@
         font-size: 1.5rem;
 
         &.active {
-          color: $white;
-          background-color: $blue;
+          text-decoration: underline;
         }
       }
     }
   }
 
-
+  .container {
+    float: left;
+    width: 50rem;
+  }
 
 </style>
