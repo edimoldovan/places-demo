@@ -1,8 +1,8 @@
 <template>
   <div class="detail">
     <h1>{{ place.name }}</h1>
-    <input type="checkbox" id="checkbox" v-model="place.open">
-    <label for="checkbox">Open</label>
+    <h2 v-if="place.open">Yep, we're open</h2>
+    <h2 v-else>Sorry, we're closed</h2>
   </div>
 </template>
 
