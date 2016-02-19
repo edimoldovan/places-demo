@@ -25,11 +25,6 @@ export default {
     }
   },
 
-  /* created () {
-    console.log('store retrieved')
-    getAllPlaces()
-  },*/
-
   methods: {
     update () {
       this.places = store.state.places

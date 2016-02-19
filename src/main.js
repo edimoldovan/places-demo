@@ -20,6 +20,7 @@ router.map({
   },
   '/restaurants': {
     component: RestaurantsView,
+    name: 'restaurants',
     subRoutes: {
       '/': {
         component: {
@@ -33,7 +34,8 @@ router.map({
         name: 'restaurant-detail'
       },
       '/add': {
-        component: AddView
+        component: AddView,
+        name: 'add'
       }
     }
   }
